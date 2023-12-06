@@ -33,6 +33,7 @@ void lab3()
 	int cn = 1;
 	cout << "Напишите вариант ответа\nВыберите вариант выполнение программы (for/while/do_while): ";
 	cin >> answer;
+	cout << endl;
 	if (answer == "for") {
 		for (y = 1; y <= 8; y = y + 0.5)
 		{

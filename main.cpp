@@ -54,7 +54,7 @@ void InformationOwn()
 }
 
 void OpenLinks() {
-
+	system("cls");
 }
 
 int main()
