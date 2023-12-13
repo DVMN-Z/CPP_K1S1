@@ -1,4 +1,5 @@
 #include <iostream>
+#define _USE_MATH_DEFINES
 #include <math.h>
 
 
@@ -264,6 +265,7 @@ void lab8()
 	char str[999];
 	int dl = 0;
 	int flag_end = 0;
+	int check_space;
 
 	printf("Вводите предложение только на английском.\nВведите исходное предложение предложение: ");
 	gets_s(str);
@@ -276,9 +278,17 @@ void lab8()
 		printf("\n\nНовое предложение: ");
 		for (int i = 0; i < 999; i++) {
 			if (str[i] == ' ') {
-				dl++;
-				str[i] = str[i + 1];
-				i++;
+				check_space = 1;
+				while (str[i] == ' ') {
+					if (str[i + check_space] == ' ') {
+						check_space++;
+					}
+					else {
+						dl = dl + check_space;
+						str[i] = str[i + check_space];
+						i = i + check_space;
+					}
+				}
 			}
 			else if (str[i] == '!' || str[i] == '?' || str[i] == '.') {
 				cout << str[i] << endl;
@@ -394,13 +404,40 @@ void lab11()
 
 
 
+
+
+
+double calcRec(double pi, int i) {
+	if (i == 0) {
+		return 1.0;
+	}
+	else {
+		double term = pow(-1, i) * pow(pi, 2 * i) / tgamma(2 * i + 1);
+		return term + calcRec(pi, i - 1);
+	}
+}
 void lab12()
 {
 	cout << "Лабараторная #12" << endl;
 	cout << "Задание: Написать программу и рекурсивную функцию для вычисления значения суммы\nбесконечного ряда с заданной точностью.На печать вывести значение суммы\nи число членов ряда, вошедших в сумму.Вычислить значение ряда, используя\nзаданную формулу или воспользовавшись библиотечной функцией. Сравнить\nполученные результаты(они должны быть достаточно близки)." << endl;
 	cout << "========================================================================\n" << endl;
 
-	
+	double pi = M_PI / 6.0;
+	double sum = 0.0;
+	double e = 0.5*pow(10, -4);
+
+	int c = 0;
+
+	bool flag_check = false;
+	do {
+		sum += calcRec(pi, c);
+		c++;
+		if (fabs(calcRec(pi, c)) > e) { flag_check = true; }
+	} while (flag_check == false);
+
+	double res = cos(pi);
+
+	printf("Значение суммы ряда: %f\nКол-во чисел в ряду: %d\nЗначение ряда через функцию: %f\n", sum, c, res);
 
 	cout << "\n========================================================================" << endl;
 }
