@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\rgr">
+      <UniqueIdentifier>{9d472f15-9228-45a5-abd2-c0370c69e822}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,8 +24,11 @@
     <ClCompile Include="labs.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="rgr.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="rgr_core.cpp">
+      <Filter>Исходные файлы\rgr</Filter>
+    </ClCompile>
+    <ClCompile Include="rgr_function.cpp">
+      <Filter>Исходные файлы\rgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
