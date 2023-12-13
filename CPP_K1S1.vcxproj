@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="labs.cpp" />
+    <ClCompile Include="main_menu.cpp" />
     <ClCompile Include="rgr_core.cpp" />
     <ClCompile Include="rgr_function.cpp" />
   </ItemGroup>

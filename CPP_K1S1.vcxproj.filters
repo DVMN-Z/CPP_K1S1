@@ -16,11 +16,11 @@
     <Filter Include="Исходные файлы\rgr">
       <UniqueIdentifier>{9d472f15-9228-45a5-abd2-c0370c69e822}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\main">
+      <UniqueIdentifier>{c87c1de4-9566-451e-bda5-fb9a24ef327d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="labs.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -29,6 +29,12 @@
     </ClCompile>
     <ClCompile Include="rgr_function.cpp">
       <Filter>Исходные файлы\rgr</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы\main</Filter>
+    </ClCompile>
+    <ClCompile Include="main_menu.cpp">
+      <Filter>Исходные файлы\main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
