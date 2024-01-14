@@ -5,3 +5,5 @@ void M_Labs(int flag);
 void InformationOwn();
 void OpenLinks();
 void press_to_continue();
+
+int RGR_Core();

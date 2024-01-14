@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <conio.h>
 #include <cstdlib>
 #include <Windows.h>
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int l_flag = 1, m_flag, r_vrnt, hide = 0;
+int l_flag = 1, m_flag, r_vrnt;
 
 void openURL(string url) {
 	string com = "start " + url;
@@ -30,28 +30,18 @@ int main()
 			char key = _getch();
 
 			if (key == '1') {
-				m_flag = 2;
-			}
-			else if (key == '2') {
 				m_flag = 3;
 				M_Labs(l_flag);
 			}
-			else if (key == '3') {
+			else if (key == '2') {
 				m_flag = 4;
 			}
-			else if (key == '4') {
+			else if (key == '3') {
 				m_flag = 5;
 			}
 			else if (key == 'q' || key == 'Q' || key == '©' || key == '‰') {
 				system("cls");
 				return 0;
-			}
-		}
-		else if (m_flag == 2) {
-			char key = _getch();
-
-			if (key == 'q' || key == 'Q' || key == '©' || key == '‰') {
-				m_flag = 1;
 			}
 		}
 		else if (m_flag == 3) {

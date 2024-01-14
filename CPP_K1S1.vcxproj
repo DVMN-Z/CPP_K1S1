@@ -130,11 +130,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="labs.cpp" />
     <ClCompile Include="main_menu.cpp" />
-    <ClCompile Include="rgr_core.cpp" />
-    <ClCompile Include="rgr_function.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include_cpp.h" />
+    <ClInclude Include="include_cpp_RGR.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
