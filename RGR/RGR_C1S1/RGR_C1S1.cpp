@@ -27,12 +27,14 @@ int main()
             else if (key == '3') {
                 flag = 4;
             }
+            else if (key == '4') {
+                flag = 5;
+            }
             else if (key == 'q' || key == 'Q' || key == '©' || key == '‰') {
                 return 0;
             }
         }
-        else if (flag == 2 || flag == 3) {
-            int sum = 0;
+        else if (flag == 2 || flag == 3 || flag == 4) {
             if (flag_check == 0) {
 
                 if (flag == 2) {
@@ -41,13 +43,25 @@ int main()
                 else if (flag == 3) {
                     generate_matrix_r(matrix1);
                 }
+                else if (flag == 4) {
+                    system("cls");
+                    cout << "\n\tПрежде чем продолжить:" << endl;
+                    cout << "\n\tФайл должен находиться по пути: C:\\RGR\\ и иметь название numbers.txt" << endl;
+                    
+                    cout << "\n\n\t\tНажмите любую кнопку чтобы продолжить..." << endl;
+                    _getch();
+                    system("cls");
+                    generate_matrix_readfile(matrix1);
+                    cout << "\n\n\t\tНажмите любую кнопку чтобы продолжить..." << endl;
+                    _getch();
+                }
 
-                find_otr(matrix1, sum);
+                find_otr(matrix1);
                 p_fstring(matrix1, matrix2);
 
             }
 
-            matrixs_out(matrix1, matrix2, sum);
+            matrixs_out(matrix1, matrix2);
             flag_check = 1;
             char key = _getch();
             if (key == 'q' || key == 'Q' || key == '©' || key == '‰') {
@@ -55,7 +69,7 @@ int main()
                 flag = 1;
             }
         }
-        else if (flag == 4) {
+        else if (flag == 5) {
             Information();
             char key = _getch();
             if (key == 'q' || key == 'Q' || key == '©' || key == '‰') {

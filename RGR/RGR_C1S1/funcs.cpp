@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -22,9 +23,42 @@ void generate_matrix_i(int m[6][6]) {
 	}
 }
 
+void generate_matrix_readfile(int m[6][6]) {
+	int n = 0;
 
-void find_otr(int m[6][6], int sum) {
-	sum = 0;
+	fstream F;
+	F.open("C:\\RGR\\numbers.txt", ios::in);
+	if (F) {
+		cout << "\n\tФайл был найден!\n\tВсё возможное из файла было перемещено в матрицу" << endl;
+		while (n != 36) {
+			for (int i = 0; i < 6; i++) {
+				for (int k = 0; k < 6; k++) {
+					if (!F.eof()) {
+						F >> m[i][k];
+					}
+					else {
+						m[i][k] = 0;
+					}
+					n++;
+				}
+			}
+
+		}
+	}
+	else {
+		cout << "\n\tФайл не был найден!\n\tВсё заменено на 0" << endl;
+		for (int i = 0; i < 6; i++) {
+			for (int k = 0; k < 6; k++) {
+				m[i][k] = 0;
+			}
+		}
+	}
+	F.close();
+}
+
+
+int find_otr(int m[6][6]) {
+	int sum = 0;
 	for (int i = 0; i < 6; i++) {
 		for (int k = 0; k < 6; k++) {
 			if (m[i][k] < 0) {
@@ -32,6 +66,7 @@ void find_otr(int m[6][6], int sum) {
 			}
 		}
 	}
+	return sum;
 }
 
 void p_fstring(int m1[6][6], int m2[6][6]) {
@@ -47,7 +82,7 @@ void p_fstring(int m1[6][6], int m2[6][6]) {
 	}
 }
 
-void matrixs_out(int m1[6][6], int m2[6][6], int sum) {
+void matrixs_out(int m1[6][6], int m2[6][6]) {
 	system("cls");
 	cout << "==========================================================================\n" << endl;
 
@@ -67,6 +102,9 @@ void matrixs_out(int m1[6][6], int m2[6][6], int sum) {
 		}
 		cout << endl;
 	}
+
+	cout << "\nСумма отрицательных чисел в первообразной матрице: " << find_otr(m1) << endl;
+	cout << "Сумма отрицательных чисел в преобразованной матрице: " << find_otr(m2) << endl;
 
 	cout << "\n==========================================================================" << endl;
 	
