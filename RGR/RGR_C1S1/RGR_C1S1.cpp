@@ -8,11 +8,10 @@ int main()
 {   
     setlocale(LC_ALL, "russian");
 
-    int flag, flag_check = 0;
-    int matrix1[6][6], matrix2[6][6];
+    int flag = 1, flag_check = 0, matrix1[6][6], matrix2[6][6];
 
     cout << "\n\tНажмите любую кнопку чтобы продолжить..." << endl;
-    _getch(); flag = 1;
+    _getch();
 
     while (1) {
         if (flag == 1) {
@@ -56,7 +55,6 @@ int main()
                     _getch();
                 }
 
-                find_otr(matrix1);
                 p_fstring(matrix1, matrix2);
 
             }
@@ -68,7 +66,7 @@ int main()
                 flag_check = 0;
                 flag = 1;
             }
-        }
+        }   
         else if (flag == 5) {
             Information();
             char key = _getch();
