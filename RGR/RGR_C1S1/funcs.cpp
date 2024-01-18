@@ -30,19 +30,16 @@ void generate_matrix_readfile(int m[6][6]) {
 	F.open("C:\\RGR\\numbers.txt", ios::in);
 	if (F) {
 		cout << "\n\tФайл был найден!\n\tВсё возможное из файла было перемещено в матрицу" << endl;
-		while (n != 36) {
-			for (int i = 0; i < 6; i++) {
-				for (int k = 0; k < 6; k++) {
-					if (!F.eof()) {
-						F >> m[i][k];
-					}
-					else {
-						m[i][k] = 0;
-					}
-					n++;
+		for (int i = 0; i < 6; i++) {
+			for (int k = 0; k < 6; k++) {
+				if (!F.eof()) {
+					F >> m[i][k];
 				}
+				else {
+					m[i][k] = 0;
+				}
+				n++;
 			}
-
 		}
 	}
 	else {
@@ -82,11 +79,7 @@ void p_fstring(int m1[6][6], int m2[6][6]) {
 	}
 }
 
-void matrixs_out(int m1[6][6], int m2[6][6]) {
-	system("cls");
-	cout << "==========================================================================\n" << endl;
-
-	cout << "\tПервородная матрица:" << endl;
+void matrixs_out(int m1[6][6]) {
 	for (int i = 0; i < 6; i++) {
 		cout << "\t\t";
 		for (int k = 0; k < 6; k++) {
@@ -94,20 +87,5 @@ void matrixs_out(int m1[6][6], int m2[6][6]) {
 		}
 		cout << endl;
 	}
-	cout << "\n\tМатрица с выполнеными задачами:" << endl;
-	for (int i = 0; i < 6; i++) {
-		cout << "\t\t";
-		for (int k = 0; k < 6; k++) {
-			cout << m2[i][k] << "\t";
-		}
-		cout << endl;
-	}
-
-	cout << "\nСумма отрицательных чисел в первообразной матрице: " << find_otr(m1) << endl;
-	cout << "Сумма отрицательных чисел в преобразованной матрице: " << find_otr(m2) << endl;
-
-	cout << "\n==========================================================================" << endl;
-	
-	cout << "\n\tQ. - Вернуться в главное меню" << endl;
 }
 
